@@ -1,0 +1,74 @@
+dl, ol, ul{
+  margin:unset !important;
+  padding: unset !important;
+}
+
+.github-profiler{
+  font-size: 32px;
+  vertical-align: middle;
+  color: #fff;
+}
+.header-wrapper{
+  text-align: center;
+  padding: 10px;
+}
+.header-wrapper svg {
+  fill: #fff;
+  margin-right: 10px;
+}
+section.header {
+  background: #24292f;
+}
+
+form ul {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form ul li {
+  list-style-type: none;
+  margin: 5px;
+}
+form input.form-control {
+  padding: 10px;
+}
+.newsBody {
+  background-color: #f6f8fa;
+  padding: 40px;
+  height: 555px;
+}
+.inputFeild {
+  width: 60%;
+}
+.button button {
+  padding: 9px;
+  width: 100px;
+}
+.form-control{
+  border: 1px solid #24292f;
+}
+.form-control:focus{
+  box-shadow: none !important;
+  border: 1px solid none;
+}
+@media screen and (max-width:600px) {
+  .inputFeild {
+    width: 80%;
+  }
+}
+@media screen and (max-width:425px) {
+  form ul {
+    flex-direction: column;
+  }
+  .inputFeild {
+    width: 100%;
+  }
+  .newsBody {
+    height: 500px;
+  }
+  .newsBody {
+    padding: 40px 0px;
+  }
+ 
+}
