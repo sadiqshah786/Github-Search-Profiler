@@ -56,8 +56,32 @@ section.header {
   display: flex;
   justify-content: center;
 }
-.hide{
+.hide,button.swal-button.swal-button--cancel{
   display: none;
+}
+.swal-modal {
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+}
+.swal-button {
+  font-weight: unset;
+  color: #000;
+  background: unset;
+  border: unset;
+  outline: unset;
+  box-shadow: none !important;
+  padding: unset;
+  position: absolute;
+  top: -75px !important;
+  left: -10px;
+  font-size: 13px !important;
+  font-size: 22px !important;
+}
+.swal-modal {
+  height: 70px;
+}
+.swal-button:hover{
+  background-color: unset !important;
 }
 .show
 {
@@ -66,6 +90,7 @@ section.header {
 .error-wrapper {
   width: 500px;
   text-align: center;
+  margin-top: 50px;
 }
 .card_wrapper .ant-alert {
   margin-top: 40px;
@@ -145,5 +170,8 @@ button.btn.btn-primary {
   .github-profiler {
     font-size: 18px;
   }
+  button.swal-button.swal-button--cancel {
+    display: none;
+}
  
 }
