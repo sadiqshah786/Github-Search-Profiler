@@ -87,6 +87,10 @@ section.header {
 {
   display: block;
 }
+.mt .ant-card-meta-description {
+  margin-top: 10px;
+}
+
 .error-wrapper {
   width: 500px;
   text-align: center;

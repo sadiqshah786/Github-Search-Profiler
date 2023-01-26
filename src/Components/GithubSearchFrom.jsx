@@ -21,7 +21,6 @@ const GithubSearchFrom = () => {
                 const data = await fetch(`https://api.github.com/users/${user}`)
                 if (data.ok) {
                     const response = await data.json()
-                    console.log(response)
                     setData(response)
                 } else {
                     throw new Error("Sorry, Data not found")
@@ -41,7 +40,8 @@ const GithubSearchFrom = () => {
                 button: "✗",
             });
         }
-
+        
+        setUser("")
     }
     return (
         <div className='main-wrapper'>
@@ -56,14 +56,6 @@ const GithubSearchFrom = () => {
                 {
                     error ?
                         <div className="error-wrapper">
-                            {/* <Space
-                                direction="vertical"
-                                style={{
-                                    width: '100%',
-                                }}
-                            >
-                                <Alert message={error} type="error" />
-                            </Space> */}
                             <Empty />
                         </div>
                         : loader ?
@@ -86,7 +78,7 @@ const GithubSearchFrom = () => {
                                     />
                                 </Skeleton>
                             </Card> :
-                            <Card
+                            <Card 
                                 className={!dataValues.id ? "hide" : "show"}
                                 style={{
                                     width: 300,
@@ -95,11 +87,13 @@ const GithubSearchFrom = () => {
                             >
                                 <Skeleton loading={loading} avatar active>
                                     <Meta
+                                        
                                         avatar={<Avatar src={dataValues.avatar_url} />}
                                         title={dataValues.name}
                                         description={dataValues.login}
+                                        className = {!dataValues.name ? "mt" :""}
                                     />
-                                    <div className="bio">
+                                    <div className="bio" >
                                         <p>{dataValues.bio}</p>
                                     </div>
                                     <div className="body_wrapper">
@@ -114,7 +108,7 @@ const GithubSearchFrom = () => {
                                             </li>
                                             <li>
                                             </li>
-                                            <li>
+                                            <li className={dataValues.location ? ' show' : 'hide'}>
                                                 <svg class="octicon octicon-location" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z"></path></svg><span>{dataValues.location} </span>
 
                                             </li>
